@@ -16,6 +16,7 @@ app.use(express.static(publicPath))
 middleware(app);
 // Api Router
 apiRoutes(app);
+console.log(process.env.NODE_ENV)
 
 const port = process.env.PORT || 9000;
 app.listen(port, (err, next) => {

@@ -6,8 +6,8 @@
   "author": "SIU_Metaphysical",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development&nodemon bin/server",
-    "start": "cross-env NODE_ENV=development&node bin/server"
+    "dev": "cross-env NODE_ENV=development nodemon bin/server",
+    "start": "cross-env NODE_ENV=production node bin/server"
   },
   "dependencies": {
     "babel": "^6.23.0",
