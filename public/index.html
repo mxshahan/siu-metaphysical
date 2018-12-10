@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SIU Metaphysical API</title>
+    <style>
+        h4 {
+            background-color: bisque;
+            padding: 10px;
+            font-weight: 400
+        }
+
+        pre {
+            white-space: pre-wrap;
+            background: hsl(30,80%,90%);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>API Documentation</h2>
+    <div>
+        <h4><code>https://siu-metaphysical.herokuapp.com/api/v1/sms/</code></h4>
+        <p><strong>Request Type: </strong>POST</p>
+        <p><strong>Request Body: </strong>You have to send following JSON format</p>
+        <p>This is the <code>Panel</code> constructor:</p>
+<pre><code>
+{
+    accType: 'drive', // driver or reporter
+    to: '8801700000000', // Phone Number with following format
+    text: 'Rendom Message' // Rendom message will be here
+}</code></pre>
+
+    </div>
+</body>
+
+</html>

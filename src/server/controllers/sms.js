@@ -7,7 +7,7 @@ const nexmo = new Nexmo({
 export const smsController = async (req, res) => {
     const from = 'SIU_Metaphysical';
     const accType = req.body.accType;
-    const to = req.body.to;
+    const to = req.body.to; // Reciever Phone Number
     const text = req.body.text;
     try {
         await nexmo.message.sendSms(from, to, text);
