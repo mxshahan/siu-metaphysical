@@ -1,12 +1,16 @@
 import expressPromiseRouter from 'express-promise-router';
 import cors from 'cors';
-import { smsController } from '../controllers/sms';
+import { smsUser, geoUser } from '../controllers/api';
 
 const router = expressPromiseRouter();
 
-router.route('/')
+router.route('/sms')
 .options(cors())
-.post(smsController)
+.post(smsUser)
 
+router.route('/geo')
+.options(cors())
+// .post(geoUser)
+.get(geoUser)
 
 export default router;

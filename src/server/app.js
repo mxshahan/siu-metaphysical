@@ -17,6 +17,10 @@ middleware(app);
 // Api Router
 apiRoutes(app);
 
+//set up templete engine
+app.set('view engine', 'ejs');
+app.set('views', publicPath)
+
 const port = process.env.PORT || 9000;
 app.listen(port, (err, next) => {
     if(err) throw err;

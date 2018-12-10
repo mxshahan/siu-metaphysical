@@ -1,5 +1,5 @@
-import demoRoute from './sms';
+import demoRoute from './api';
 
 export default (app) => {
-    app.use('/api/v1/sms', demoRoute);
+    app.use('/api/v1', demoRoute);
 }

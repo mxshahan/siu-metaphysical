@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GEO</title>
+    <script src="/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+
+
+    
+
+    <script>
+   
+
+    if ("geolocation" in navigator) {
+        // check if geolocation is supported/enabled on current browser
+        navigator.geolocation.getCurrentPosition(
+            function success(position) {
+                // for when getting location is a success
+                console.log('latitude', position.coords.latitude, 'longitude', position.coords.longitude);
+
+                getAddress(position.coords.latitude, position.coords.longitude);
+            },
+            function error(error_message) {
+                // for when getting location results in an error
+                console.error('An error has occured while retrieving location', error_message)
+            }  
+        );
+    } else {
+    // geolocation is not supported
+    // get your location some other way
+    console.log('geolocation is not enabled on this browser')
+    }
+
+    const GOOGLE_MAP_KEY = 'AIzaSyASvjxccocCTkKXCK2xw0Yh6qqeZiyO7DY';
+    
+
+    function getAddress (latitude, longitude) {
+    $.ajax('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' +longitude + '&key=' + GOOGLE_MAP_KEY)
+    .then(
+        function success (response) {
+            console.log('User\'s Address Data is ', response)
+        },
+        function fail (status) {
+            console.log('Request failed.  Returned status of', status)
+        })
+    } 
+
+
+
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASvjxccocCTkKXCK2xw0Yh6qqeZiyO7DY&callback=initMap">
+    </script>
+</body>
+</html>
