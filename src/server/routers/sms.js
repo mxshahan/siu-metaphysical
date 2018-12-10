@@ -1,11 +1,12 @@
 import expressPromiseRouter from 'express-promise-router';
 import cors from 'cors';
-import { demoController } from '../controllers/demo';
+import { smsController } from '../controllers/sms';
 
 const router = expressPromiseRouter();
 
 router.route('/')
-.get(demoController);
+.options(cors())
+.post(smsController)
 
 
 export default router;

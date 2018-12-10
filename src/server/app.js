@@ -1,8 +1,10 @@
 import express from 'express';
 import middleware from './middlewares';
 import apiRoutes from './routers';
+import dotenv from 'dotenv';
 import './config/db';
 
+dotenv.config();
 const app = express();
 
 // Middlewares
