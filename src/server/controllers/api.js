@@ -1,7 +1,7 @@
 import Nexmo from 'nexmo';
 const nexmo = new Nexmo({
-    apiKey: 'd314265e',
-    apiSecret: 'KUvbHyq7pwvAxBUC'
+    apiKey: '4789f6a6',
+    apiSecret: 'ZkVzu2cPz480f9qj'
 }, { debug: true })
 
 export const smsUser = async (req, res) => {
